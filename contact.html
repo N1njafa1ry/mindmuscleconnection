@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Mind Muscle Connection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Ersatt video med stillbild här -->
+        <img src="img/IMG_0304_flip.JPG" alt="Hero Bakgrundsbild" class="index-header-image"> <!-- Byt ut bildkälla här -->
+        <div class="header-top">
+            <div class="logo">
+                <img src="img/mmc_logga_line.png" alt="Mind Muscle Connection Logo"> <!-- Byt ut bildkälla här -->
+            </div>
+            <nav>
+                <div class="menu-toggle">☰</div>
+                <ul>
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="about.html">Om</a></li>
+                    <li><a href="services.html">Tjänster</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content">
+            <h1>Din hälsa. Ditt mål. Min expertis.</h1>
+            <p>Personlig träning, kostrådgivning och hälsocoaching – skräddarsytt för dig.</p>
+            <a href="contact.html" class="btn">Boka nu</a>
+        </div>
+    </header>
+    <main>
+        <section class="contact-page">
+            <h1>Redo att ta första steget?</h1>
+            <p>Boka en kostnadsfri konsultation där vi går igenom dina mål, utmaningar och hur vi kan skapa en plan som verkligen fungerar för dig – på riktigt. Eller ring mig direkt på 0793450526.</p>
+            <form action="#" method="post"> <!-- Ändra action till din backend om du har en -->
+                <label for="name">Namn:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-post:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Telefonnummer:</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="message">Kort beskrivning av vad du vill ha hjälp med:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit" class="btn">Boka gratis samtal</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Mind Muscle Connection | Telefon: 0793450526</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
