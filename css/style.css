@@ -52,7 +52,7 @@ header {
 }
 
 .logo img {
-    max-height: 225px; /* Ökad med 25% från 100px */
+    max-height: 450px; /* Dubbelt så stor (från 225px) */
     width: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
 }
@@ -110,26 +110,20 @@ nav ul li a {
 }
 
 .header-content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Ökad storlek för tydligare stil */
     margin-bottom: 0.5rem;
-    text-shadow: 
-        -1px -1px 0 #ff36ff,  
-         1px -1px 0 #ff36ff,
-        -1px  1px 0 #ff36ff,
-         1px  1px 0 #ff36ff; /* Outline-effekt med blå färg */
-    color: #333333;
+    text-shadow: none; /* Ta bort rosa outline */
+    color: #FDF5E6; /* Creamvit färg */
+    font-family: 'Georgia', serif; /* Ändrad font för annan stil (kan bytas till annan om du vill) */
+    font-weight: bold;
 }
 
 .header-content p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-color: #FFFFFF;
-     text-shadow: 
-        -1px -1px 0 #000000,  
-         1px -1px 0 #000000,
-        -1px  1px 0 #000000,
-         1px  1px 0 #000000; /* Outline-effekt med blå färg */
-
+    text-shadow: none; /* Ta bort outline */
+    color: #FDF5E6; /* Creamvit färg */
+    font-family: 'Georgia', serif; /* Ändrad font för annan stil */
 }
 
 .header-content .btn {
@@ -266,7 +260,7 @@ color: #FFFFFF;
 
 .about-page .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligna högst upp för att bilden startar med rubrik */
     justify-content: center;
     gap: 2rem;
     max-width: 1200px;
@@ -277,6 +271,7 @@ color: #FFFFFF;
 .about-page img {
     max-width: 400px;
     border-radius: 10px;
+    align-self: flex-start; /* Säkerställer att bilden startar högst upp */
 }
 
 .about-page .diploma-image {
@@ -373,7 +368,7 @@ color: #FFFFFF;
 .services-page .service {
     display: flex;
     flex-direction: row; /* Bild vänster, text höger för varje sektion */
-    align-items: flex-start; /* Aligna högst upp för att bild startar med rubrik */
+    align-items: center;
     background-color: #FFF8E7; /* Ljus cream-variant för kort */
     padding: 2.5rem; /* Ökat padding för mer utrymme */
     border-radius: 20px; /* Mjukare, rundare hörn för modern känsla */
@@ -395,7 +390,6 @@ color: #FFFFFF;
     border-radius: 15px; /* Mjukare hörn på bilder */
     margin: 0 2rem 0 0; /* Avstånd till text */
     object-fit: cover; /* Säkerställer snygg beskärning */
-    align-self: flex-start; /* Säkerställer att bilden startar högst upp */
 }
 
 .services-page .service:nth-child(even) img {
@@ -452,8 +446,8 @@ color: #FFFFFF;
 
 /* ========== Footer (används på alla sidor) ========== */
 footer {
-    background-color: #064496;
-    color: #FFFFFF;
+    background-color: #5ee3ff; /* Ny färg, ljusblå för att matcha tema */
+    color: #333333; /* Mörkgrå text för kontrast */
     text-align: center;
     padding: 1rem;
 }
