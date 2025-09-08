@@ -9,22 +9,24 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333333;
-    margin: 0; /* Säkerställer ingen marginal högst upp */
-    overflow-x: hidden; /* Förhindrar horisontell scrollning på mobil */
+    margin: 0;
+    overflow-x: hidden; /* Förhindrar horisontell scrollning */
     background-color: #FFE4E1; /* Ljusrosa bakgrund för alla sidor */
+    width: 100%; /* Säkerställer full bredd */
 }
 
 /* ========== Header (används på alla sidor) ========== */
 header {
     background-color: transparent;
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* Ändrat till relative för bättre hantering av bild */
+    position: relative;
     top: 0;
     z-index: 1000;
-    min-height: 300px; /* Ökad höjd för bilden på index.html */
+    min-height: 200px; /* Minskat för mobil */
+    width: 100%;
 }
 
 .index-header-image {
@@ -39,20 +41,21 @@ header {
 
 .header-top {
     display: flex;
-    flex-direction: row; /* Horisontell placering av logga och meny */
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     position: relative;
     z-index: 1;
+    padding: 0 0.5rem; /* Minskat padding */
 }
 
 .logo {
-    flex: 1; /* Tar upp tillgängligt utrymme för att centrera */
-    text-align: center; /* Centrerar loggan */
+    flex: 0 0 auto;
 }
 
 .logo img {
-    max-height: 450px; /* Dubbelt så stor (från 225px) */
+    max-height: 150px; /* Minskat för mobil */
     width: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
 }
@@ -62,93 +65,97 @@ nav {
 }
 
 .menu-toggle {
-    display: block; /* Synlig på alla skärmar */
+    display: block;
     color: #5ee3ff;
-    font-size: 3rem;
+    font-size: 2.5rem; /* Minskat för mobil */
     cursor: pointer;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     position: absolute;
-    right: 1rem; /* Justerat för mobil */
+    right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1001;
 }
 
 nav ul {
-    display: none; /* Dold som standard */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0; /* Centrerad på skärmen */
-    width: 100%; /* Full bredd på mobil */
-    max-width: 200px; /* Begränsar bredd för att passa */
-    background-color: rgba(6, 68, 150, 0.9); /* Mörkare bakgrund för bättre kontrast */
-    z-index: 1;
+    right: 0; /* Flyttad till höger */
+    width: 100%;
+    max-width: 180px; /* Begränsad bredd */
+    background-color: rgba(6, 68, 150, 0.9);
+    z-index: 1000;
     text-align: center;
-    margin-top: 1rem; /* Mindre marginal */
-    padding: 1rem 0; /* Inre padding för bättre utseende */
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Liten skugga för djup */
 }
 
 nav ul.active {
-    display: flex; /* Visas när hamburgermenyn klickas */
+    display: flex;
 }
 
 nav ul li {
-    margin: 0.8rem 0; /* Mindre marginal mellan objekt */
+    margin: 0.5rem 0;
     width: 100%;
 }
 
 nav ul li a {
     color: #5ee3ff;
     text-decoration: none;
-    font-size: 1.1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    display: block; /* Full bredd på länk */
-    padding: 0.5rem;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    display: block;
+    padding: 0.3rem;
 }
 
 .header-content {
     text-align: center;
-    margin-top: 6rem; /* Ökat avstånd från menyn */
-    margin-bottom: 3rem;
+    margin-top: 2rem; /* Minskat avstånd */
+    margin-bottom: 1rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    padding: 0 0.5rem; /* Minskat padding */
 }
 
 .header-content h1 {
-    font-size: 3rem; /* Ökad storlek för tydligare stil */
-    margin-bottom: 0.5rem;
-    text-shadow: none; /* Ta bort rosa outline */
-    color: #FFE4E1; /* Creamvit färg */
-    font-family: 'Georgia', serif; /* Ändrad font för annan stil (kan bytas till annan om du vill) */
+    font-size: 2rem; /* Minskat för mobil */
+    margin-bottom: 0.3rem;
+    text-shadow: none;
+    color: #FFE4E1;
+    font-family: 'Georgia', serif;
     font-weight: bold;
 }
 
 .header-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-shadow: none; /* Ta bort outline */
-    color: #FFE4E1; /* Creamvit färg */
-    font-family: 'Georgia', serif; /* Ändrad font för annan stil */
+    font-size: 0.9rem; /* Minskat för mobil */
+    margin-bottom: 0.5rem;
+    text-shadow: none;
+    color: #FFE4E1;
+    font-family: 'Georgia', serif;
 }
 
 .header-content .btn {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Minskat för mobil */
 }
 
 /* ========== Knappstil (används på alla sidor) ========== */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #5ee3ff; /* Ljusblå färg, samma som hamburgermenyn */
-    color: #333333; /* Mörkgrå textfärg */
+    padding: 0.6rem 1.2rem; /* Minskat padding */
+    background-color: #5ee3ff;
+    color: #333333;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Lägg till transform för hover-effekt */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
-    background-color: #4cc9e6; /* Mörkare variant av ljusblå för hover-kontrast */
-    transform: translateY(-2px); /* Liten lyft-effekt för proffsig känsla */
+    background-color: #4cc9e6;
+    transform: translateY(-2px);
 }
 
 /* ========== Hero-sektion (hemsida: index.html) ========== */
@@ -157,9 +164,10 @@ nav ul li a {
     text-align: center;
     padding: 0;
     margin: 0;
-    min-height: calc(100vh - 300px); /* Anpassar efter headerns höjd */
+    min-height: calc(100vh - 200px); /* Anpassat efter minskad header */
     color: #FFFFFF;
     overflow: hidden;
+    width: 100%;
 }
 
 .hero-video {
@@ -179,60 +187,62 @@ nav ul li a {
 
 /* ========== Om-sektion (hemsida: index.html) ========== */
 .about {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem; /* Minskat padding */
     text-align: center;
-    background-color: #FFF0F0; /* Ljusrosa nyans för variation */
+    background-color: #FFF0F0;
 }
 
 .about-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 1rem; /* Minskat gap */
+    max-width: 100%;
     margin: 0 auto;
+    flex-direction: column; /* Stapla på mobil */
 }
 
 .about-content img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 10px;
 }
 
 .about-text {
-    text-align: left; /* Vänsterjusterar texten för bättre läsbarhet */
-    max-width: 600px; /* Begränsar bredden för textblocket */
+    text-align: left;
+    max-width: 100%;
 }
 
 .about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem; /* Avstånd under rubriken */
-    color: #333333; /* Mörkgrå för rubriker */
+    font-size: 1.8rem; /* Minskat för mobil */
+    margin-bottom: 0.8rem;
+    color: #333333;
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem; /* Extra avstånd under paragrafen */
+    font-size: 1rem; /* Minskat för mobil */
+    margin-bottom: 0.8rem;
 }
 
 /* ========== Tjänster-sektion (hemsida: index.html) ========== */
 .services {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem; /* Minskat padding */
     text-align: center;
-    background-color: #FFE4E1; /* Ljusrosa bakgrund */
+    background-color: #FFE4E1;
 }
 
 .services h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #333333; /* Mörkgrå för rubriker */
+    font-size: 1.8rem; /* Minskat för mobil */
+    margin-bottom: 1.5rem;
+    color: #333333;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Minskat gap */
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0;
 }
 
 .service img {
@@ -241,79 +251,81 @@ nav ul li a {
 }
 
 .service h3 {
-    margin: 1rem 0;
-    font-size: 1.5rem;
+    margin: 0.8rem 0;
+    font-size: 1.3rem; /* Minskat för mobil */
     color: #333333;
 }
 
 .service p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 /* ========== Om-sida (about.html) ========== */
 .about-page {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem; /* Minskat padding */
     text-align: center;
-    background-color: #FFE4E1; /* Ljusrosa bakgrund */
+    background-color: #FFE4E1;
 }
 
 .about-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333333; /* Mörkgrå för rubriker */
+    font-size: 2rem; /* Minskat för mobil */
+    margin-bottom: 1.5rem;
+    color: #333333;
 }
 
 .about-page .about-content {
     display: flex;
-    align-items: flex-start; /* Aligna högst upp för att bilden startar med rubrik */
+    align-items: flex-start;
     justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 1rem; /* Minskat gap */
+    max-width: 100%;
     margin: 0 auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    flex-direction: column; /* Stapla på mobil */
 }
 
 .about-page img {
-    max-width: 400px;
+    max-width: 100%;
     border-radius: 10px;
-    align-self: flex-start; /* Säkerställer att bilden startar högst upp */
+    align-self: center;
 }
 
 .about-page .diploma-image {
-    max-width: 600px;
+    max-width: 100%;
     display: block;
-    margin: 2rem auto;
+    margin: 1rem auto;
     border-radius: 10px;
 }
 
 .about-page p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Minskat för mobil */
 }
 
 /* ========== Kontakt-sida (contact.html) ========== */
 .contact-page {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem; /* Minskat padding */
     text-align: center;
-    background-color: #FFE4E1; /* Ljusrosa bakgrund */
+    background-color: #FFE4E1;
 }
 
 .contact-page h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem; /* Minskat för mobil */
     margin-bottom: 1rem;
-    color: #333333; /* Mörkgrå för rubriker */
+    color: #333333;
 }
 
 .contact-page p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 1rem; /* Minskat för mobil */
+    margin-bottom: 1rem;
 }
 
 .contact-page form {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem; /* Minskat gap */
+    padding: 0;
 }
 
 .contact-page label {
@@ -328,136 +340,138 @@ nav ul li a {
     border: 1px solid #4A6FA5;
     border-radius: 5px;
     font-size: 1rem;
-    width: 100%; /* Full bredd på mobil */
+    width: 100%;
 }
 
 .contact-page textarea {
-    min-height: 150px;
+    min-height: 120px; /* Minskat höjd */
     resize: vertical;
 }
 
 .contact-page button {
     align-self: center;
+    width: 100%; /* Full bredd på mobil */
 }
 
 /* ========== Tjänster-sida (services.html) ========== */
 .services-page {
-    padding: 4rem 1rem; /* Minskat padding för mobil */
+    padding: 2rem 1rem; /* Minskat padding */
     text-align: center;
-    background-color: #FFE4E1; /* Ljusrosa bakgrund */
+    background-color: #FFE4E1;
 }
 
 .services-page h1 {
-    font-size: 2.8rem; /* Ökad storlek för mer impact */
-    margin-bottom: 1.5rem;
-    color: #333333; /* Mörkgrå för rubriker */
-    font-weight: bold; /* Starkare typsnitt för proffsighet */
+    font-size: 2rem; /* Minskat för mobil */
+    margin-bottom: 1rem;
+    color: #333333;
+    font-weight: bold;
 }
 
 .services-page > p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem; /* Minskat avstånd för mobil */
-    color: #555555; /* Mjukare grå för text */
-    max-width: 100%; /* Full bredd på mobil */
+    font-size: 1rem; /* Minskat för mobil */
+    margin-bottom: 1.5rem;
+    color: #555555;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 0.5rem; /* Lite padding för läsbarhet */
+    padding: 0;
 }
 
 .services-page .service-grid {
     display: flex;
-    flex-direction: column; /* Staplad layout för mobil, ändras i desktop */
-    gap: 2rem; /* Minskat gap för mobil */
-    max-width: 100%; /* Full bredd på mobil */
+    flex-direction: column;
+    gap: 1.5rem; /* Minskat gap */
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 0.5rem; /* Lite padding för att undvika overflow */
+    padding: 0;
 }
 
 .services-page .service {
     display: flex;
-    flex-direction: column; /* Stapla bild över text på mobil */
-    align-items: center; /* Centrera innehåll */
-    background-color: #FFF8E7; /* Ljus cream-variant för kort */
-    padding: 1.5rem; /* Minskat padding för mobil */
-    border-radius: 20px; /* Mjukare, rundare hörn för modern känsla */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Mjuk skugga för djup */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover-effekt */
-    width: 100%; /* Full bredd på mobil */
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF8E7;
+    padding: 1rem; /* Minskat padding */
+    border-radius: 15px; /* Minskat rundning */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lättare skugga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .services-page .service:nth-child(even) {
-    flex-direction: column; /* Ingen omvänd layout på mobil */
+    flex-direction: column;
 }
 
 .services-page .service:hover {
-    transform: translateY(-5px); /* Lätt lyft vid hover */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Starkare skugga vid hover */
+    transform: translateY(-3px); /* Minskat lyft */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .services-page .service img {
-    max-width: 100%; /* Full bredd på mobil */
-    border-radius: 15px; /* Mjukare hörn på bilder */
-    margin-bottom: 1rem; /* Avstånd till text */
-    object-fit: cover; /* Säkerställer snygg beskärning */
-    align-self: center; /* Centrera bilden */
+    max-width: 100%;
+    border-radius: 10px; /* Minskat rundning */
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+    align-self: center;
 }
 
 .services-page .service:nth-child(even) img {
-    margin: 0 0 1rem 0; /* Håller marginal konsekvent */
+    margin: 0 0 0.5rem 0;
 }
 
 .services-page .service-text {
-    text-align: center; /* Centrera text på mobil för bättre flöde */
-    width: 100%; /* Full bredd på mobil */
-    padding-left: 0; /* Ta bort padding på mobil */
+    text-align: center;
+    width: 100%;
+    padding: 0;
 }
 
 .services-page .service h2 {
-    font-size: 1.8rem; /* Mindre storlek för mobil */
-    margin-bottom: 1rem;
-    color: #333333; /* Mörkgrå för rubriker */
+    font-size: 1.6rem; /* Minskat för mobil */
+    margin-bottom: 0.8rem;
+    color: #333333;
     font-weight: bold;
 }
 
 .services-page .service p {
-    font-size: 1rem; /* Mindre storlek för mobil */
-    margin-bottom: 1rem;
+    font-size: 0.9rem; /* Minskat för mobil */
+    margin-bottom: 0.8rem;
     color: #444444;
 }
 
 .services-page .service h3 {
-    font-size: 1.4rem; /* Mindre storlek för mobil */
-    margin: 1rem 0 0.8rem;
-    color: #333333; /* Mörkgrå för rubriker */
+    font-size: 1.2rem; /* Minskat för mobil */
+    margin: 0.8rem 0 0.5rem;
+    color: #333333;
     font-weight: bold;
 }
 
 .services-page .service ul {
     list-style-type: disc;
-    margin-left: 1rem; /* Minskat marginal för mobil */
-    margin-bottom: 0.8rem; /* Minskat avstånd */
-    font-size: 0.9rem; /* Mindre text för mobil */
+    margin-left: 1rem;
+    margin-bottom: 0.5rem; /* Minskat avstånd */
+    font-size: 0.9rem; /* Minskat för mobil */
     color: #555555;
 }
 
 .services-page .service ul li {
-    margin-bottom: 0.6rem; /* Minskat avstånd mellan listpunkter */
+    margin-bottom: 0.5rem;
 }
 
 .services-page .service .btn {
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
+    width: 100%; /* Full bredd på mobil */
 }
 
 .services-page .payment-info {
-    font-size: 1rem; /* Mindre text för mobil */
+    font-size: 0.9rem; /* Minskat för mobil */
     margin-top: 0;
     color: #555555;
     font-style: italic;
 }
 
 .services-page .payment-info-bottom {
-    font-size: 1rem; /* Mindre text för mobil */
-    margin-top: 1.5rem; /* Minskat men bibehåller marginal */
+    font-size: 0.9rem; /* Minskat för mobil */
+    margin-top: 1rem; /* Minskat marginal */
     margin-bottom: 0;
     color: #555555;
     font-style: italic;
@@ -465,14 +479,15 @@ nav ul li a {
 
 /* ========== Footer (används på alla sidor) ========== */
 footer {
-    background-color: #5ee3ff; /* Ny färg, ljusblå för att matcha tema */
-    color: #333333; /* Mörkgrå text för kontrast */
+    background-color: #5ee3ff;
+    color: #333333;
     text-align: center;
-    padding: 1rem;
+    padding: 0.8rem; /* Minskat padding */
+    width: 100%;
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Minskat för mobil */
 }
 
 /* ========== Responsiv design (mobil och mindre skärmar) ========== */
@@ -480,155 +495,125 @@ footer p {
     /* Header: Hamburgermeny */
     header {
         min-height: auto;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
     }
 
     .header-top {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between; /* Fördelar utrymme bättre */
-        width: 100%;
-    }
-
-    .logo {
-        flex: 0 0 auto; /* Låter loggan ta bara det utrymme den behöver */
+        padding: 0;
     }
 
     .logo img {
-        max-height: 150px; /* Minskar loggans storlek på mobil */
+        max-height: 120px; /* Ytterligare minskat */
     }
 
     .menu-toggle {
-        right: 0.5rem; /* Närmare kanten */
-        z-index: 1001; /* Säkerställer att den är över menyn */
+        right: 0;
+        font-size: 2rem;
     }
 
     nav ul {
-        top: 60px;
-        left: 0;
+        top: 50px;
+        right: 0;
         width: 100%;
-        max-width: 200px;
-        background-color: rgba(6, 68, 150, 0.9);
-        padding: 1rem 0;
-        margin-top: 0.5rem;
-        position: absolute;
-        right: 0; /* Flyttar menyn till höger */
-    }
-
-    nav ul.active {
-        display: flex;
+        max-width: 150px;
+        padding: 0.3rem 0;
+        margin-top: 0.3rem;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
-        width: 100%;
+        margin: 0.3rem 0;
     }
 
     nav ul li a {
-        font-size: 1rem; /* Mindre text på mobil */
-        padding: 0.3rem;
+        font-size: 0.9rem;
+        padding: 0.2rem;
     }
 
     .header-content {
-        margin-top: 2rem; /* Minskat avstånd */
+        margin-top: 1.5rem;
+        padding: 0;
     }
 
     .header-content h1 {
-        font-size: 1.5rem; /* Mindre storlek för mobil */
+        font-size: 1.5rem;
     }
 
     .header-content p {
-        font-size: 0.9rem; /* Mindre text för mobil */
+        font-size: 0.8rem;
     }
 
     .hero {
-        padding: 1rem;
-        min-height: calc(100vh - 150px);
+        min-height: calc(100vh - 120px);
+        padding: 0;
     }
 
     .about-content,
     .about-page .about-content {
-        flex-direction: column;
-    }
-
-    .about-content img,
-    .about-page img {
-        max-width: 100%;
+        gap: 0.5rem;
     }
 
     .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services-page .service-grid {
-        gap: 1.5rem; /* Ytterligare minskat gap */
+        gap: 1rem;
     }
 
     .services-page .service {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .services-page .service img {
-        margin-bottom: 0.5rem;
-    }
-
-    .services-page .service-text {
-        padding: 0;
+        margin-bottom: 0.3rem;
     }
 
     .about-page h1 {
-        font-size: 1.8rem;
-    }
-
-    .contact-page h1 {
-        font-size: 1.8rem;
-    }
-
-    .contact-page form {
-        padding: 0;
-        width: 100%;
-    }
-
-    .services-page h1 {
-        font-size: 1.8rem;
-    }
-
-    .services-page h2 {
-        font-size: 1.3rem;
-    }
-
-    /* Ny CSS för referenser och friskvård */
-    .referenser, .friskvard {
-        padding: 2rem 1rem; /* Minskat padding */
-    }
-
-    .referenser h2, .friskvard h2 {
         font-size: 1.6rem;
     }
 
+    .contact-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-page form {
+        gap: 0.5rem;
+    }
+
+    .services-page h1 {
+        font-size: 1.6rem;
+    }
+
+    .services-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .referenser, .friskvard {
+        padding: 1.5rem;
+    }
+
+    .referenser h2, .friskvard h2 {
+        font-size: 1.4rem;
+    }
+
     .reference-grid {
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .reference-card {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .reference-card p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .friskvard-content {
-        max-width: 100%;
-        padding: 0 0.5rem;
+        padding: 0;
     }
 
     .friskvard-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
-/* Desktop (över 768px) - Ingen ändring behövs */
+/* Desktop (över 768px) */
 @media (min-width: 769px) {
     .services-page .service {
         flex-direction: row;
@@ -636,5 +621,13 @@ footer p {
 
     .services-page .service:nth-child(even) {
         flex-direction: row-reverse;
+    }
+
+    .about-content {
+        flex-direction: row;
+    }
+
+    .about-page .about-content {
+        flex-direction: row;
     }
 }
