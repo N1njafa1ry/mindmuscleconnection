@@ -545,6 +545,18 @@ footer p {
         padding: 2rem;
     }
 
+    /* Specifik ordning för Träningsschema och Hälsocoaching */
+    #traningsschema,
+    #halsocoaching {
+        flex-direction: column;
+    }
+
+    #traningsschema img,
+    #halsocoaching img {
+        order: -1; /* Placera bilden först */
+        margin-bottom: 1rem; /* Avstånd mellan bild och text */
+    }
+
     .services-page .service img {
         max-width: 100%; /* Full bredd på mobil */
         margin: 0 0 1rem 0; /* Avstånd under bild */
