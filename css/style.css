@@ -506,6 +506,11 @@ footer p {
         background-color: rgba(6, 68, 150, 0.8);
     }
 
+        nav ul li a {
+        color: #FFF0F5; /* Ljus rosa text för bättre kontrast */
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Black outline around text */
+    }
+
     .header-content {
         margin-top: 1.5rem;
     }
