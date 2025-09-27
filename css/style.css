@@ -234,7 +234,7 @@ nav ul li a {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3x2 grid for desktop */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -539,7 +539,7 @@ footer p {
     }
 
     .service-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack services on mobile */
     }
 
     .services-page .service-grid {
