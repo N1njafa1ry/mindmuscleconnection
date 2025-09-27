@@ -21,10 +21,10 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* Ändrat till relative för bättre hantering av bild */
+    position: relative;
     top: 0;
     z-index: 1000;
-    min-height: 300px; /* Ökad höjd för bilden på index.html */
+    min-height: 300px; /* Ökad höjd för bilden */
 }
 
 .index-header-image {
@@ -110,11 +110,11 @@ nav ul li a {
 }
 
 .header-content h1 {
-    font-size: 3.5rem; /* Increased from 3rem for larger text */
+    font-size: 3.5rem; /* Larger text */
     margin-bottom: 0.5rem;
     text-shadow: none; /* Ta bort rosa outline */
-    color: #5ee3ff; /* Changed to light blue to match .btn and .menu-toggle */
-    font-family: 'Georgia', serif; /* Ändrad font för annan stil (kan bytas till annan om du vill) */
+    color: #5ee3ff; /* Light blue to match .btn and .menu-toggle */
+    font-family: 'Georgia', serif; /* Ändrad font för annan stil */
     font-weight: bold;
 }
 
@@ -124,6 +124,14 @@ nav ul li a {
     text-shadow: none; /* Ta bort outline */
     color: #FDF5E6; /* Creamvit färg */
     font-family: 'Georgia', serif; /* Ändrad font för annan stil */
+}
+
+.header-content .header-update {
+    font-size: 1.5rem; /* Larger text for update message */
+    margin-bottom: 1rem;
+    text-shadow: none;
+    color: #FDF5E6;
+    font-family: 'Georgia', serif;
 }
 
 .header-content .btn {
@@ -503,11 +511,15 @@ footer p {
     }
 
     .header-content h1 {
-        font-size: 2.2rem; /* Increased from 1.8rem for larger text */
+        font-size: 2.2rem; /* Larger text */
     }
 
     .header-content p {
         font-size: 1rem;
+    }
+
+    .header-content .header-update {
+        font-size: 1.3rem; /* Larger text for update message */
     }
 
     .hero {
