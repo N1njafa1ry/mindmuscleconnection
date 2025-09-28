@@ -519,8 +519,7 @@ footer p {
         top: calc(3rem + 1rem); /* Placera under hamburgermenyn */
         left: -5rem; /* Vänsterjusterad */
         width: 100%; /* Full bredd */
-        background-color: transparent; /* Tillfällig ljusrosa bakgrund för felsökning, ändra till transparent efter test */
-        /* Alternativ: background-color: transparent !important; */ /* Återställ till transparent efter test */
+        background-color: transparent; /* Transparent bakgrund */
         padding: 1rem; /* Lägg till padding för bättre synlighet */
         z-index: 3000; /* Högt z-index för att säkerställa synlighet */
     }
@@ -613,5 +612,21 @@ footer p {
 
     .services-page h2 {
         font-size: 1.5rem;
+    }
+}
+
+/* ========== Responsiv design för mindre skärmar (t.ex. iPhone 13 Pro, ≤450px) ========== */
+@media (max-width: 450px) {
+    .logo img {
+        max-height: 150px; /* Minska loggans storlek för mindre skärmar */
+    }
+
+    .menu-toggle {
+        font-size: 2rem; /* Minska hamburgermenyns storlek */
+        right: 0.5rem; /* Mindre marginal för att rymmas */
+    }
+
+    nav ul, nav ul.active {
+        top: calc(2rem + 1rem); /* Anpassa för mindre hamburgermeny */
     }
 }
