@@ -22,7 +22,7 @@ header {
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 0;
+    top: DaemonSet;
     z-index: 1000;
     min-height: 300px; /* Ökad höjd för bilden */
 }
@@ -483,16 +483,28 @@ footer p {
     header {
         min-height: auto;
         padding: 0.5rem 1rem;
+        max-width: 100%; /* Säkerställ att headern inte överskrider skärmbredden */
+        overflow-x: hidden; /* Dölj horisontell overflow */
+    }
+
+    .index-header-image {
+        max-width: 100%; /* Säkerställ att bakgrundsbilden inte överskrider skärmen */
     }
 
     .header-top {
         flex-direction: row;
         align-items: center;
+        max-width: 100%; /* Säkerställ att header-top inte överskrider skärmen */
     }
 
     .logo {
         flex: 1;
         text-align: center;
+    }
+
+    .logo img {
+        max-height: 200px; /* Mindre logga i mobilvyn */
+        width: auto;
     }
 
     .menu-toggle {
@@ -501,18 +513,28 @@ footer p {
 
     nav ul {
         top: 60px;
-        left: -4rem;
-        width: 50%; /* Smalare meny på mobil */
-        background-color: rgba(6, 68, 150, 0.8);
+        left: 0; /* Centrera menyn */
+        width: 100%; /* Full bredd för menyn */
+        background-color: transparent; /* Transparent bakgrund */
+        list-style-type: none; /* Ta bort bullet points */
+        /* Alternativ: li::marker { color: transparent; } */ /* Gör punkterna osynliga, aktivera vid behov */
     }
 
-        nav ul li a {
-        color: #FFF0F5; /* Ljus rosa text för bättre kontrast */
-        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Black outline around text */
+    nav ul.active {
+        display: flex; /* Visas när hamburgermenyn klickas */
+        background-color: transparent !important; /* Säkerställ transparent bakgrund */
+        padding: 1rem; /* Lägg till padding för bättre synlighet */
+        /* Alternativ: color: #333333; */ /* Mörkgrå text för bättre kontrast, aktivera vid behov */
+    }
+
+    nav ul li a {
+        color: #FFF0F5; /* Ljusrosa text */
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Svart konturlinje runt texten */
     }
 
     .header-content {
-        margin-top: 1.5rem;
+        margin-top: 1rem; /* Minskat avstånd för kompaktare header */
+        max-width: 100%; /* Säkerställ att header-content inte överskrider skärmen */
     }
 
     .header-content h1 {
