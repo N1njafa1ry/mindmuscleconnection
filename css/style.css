@@ -17,7 +17,7 @@ body {
 /* ========== Header (används på alla sidor) ========== */
 header {
     background-color: transparent;
-    padding: 1rem 2rem;
+    padding: 0 2rem; /* Ta bort top-padding för att nå toppen */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,61 +37,61 @@ header {
     z-index: -1;
 }
 
+.header-logo {
+    max-width: 500px; /* Stor logga */
+    width: 100%;
+    display: block;
+    margin: 0 auto 1rem auto; /* Centrerad med avstånd under */
+    z-index: 1; /* Säkerställer att loggan är över bakgrundsbilden */
+}
+
 .header-top {
     display: flex;
-    flex-direction: row; /* Horisontell placering av logga och meny */
+    flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 110%; /* Full bredd */
     position: relative;
-    z-index: 1;
+    z-index: 2; /* Över bakgrundsbilden */
+    justify-content: center; /* Centrera navbaren */
+    background-color: #000000a8; /* Mörkgrå, halvtransparent bakgrund */
+    padding: 0.5rem 0; /* Liten padding för bättre utseende */
+    margin: 0; /* Säkerställer att den når toppen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Svag skugga för djup */
 }
 
-.logo {
-    flex: 1; /* Tar upp tillgängligt utrymme för att centrera */
-    text-align: center; /* Centrerar loggan */
-}
-
-.logo img {
-    max-height: 450px; /* Dubbelt så stor (från 225px) */
-    width: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+.menu-toggle {
+    display: none; /* Dold i skrivbordsvy */
+    color: #5ee3ff; /* Ljusblå för att matcha menytexter */
+    font-size: 2rem; /* Stor ikon */
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem; /* Fast position inom header-top */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 nav {
     position: relative;
-}
-
-.menu-toggle {
-    display: block; /* Synlig på alla skärmar */
-    color: #5ee3ff;
-    font-size: 3rem;
-    cursor: pointer;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    position: absolute;
-    right: 2rem; /* Höger hörn */
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%; /* Full bredd för att sträcka ut navbaren */
 }
 
 nav ul {
-    display: none; /* Dold som standard */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: -9.8rem; /* Flyttar menyn åt vänster */
-    width: 200px; /* Smalare meny */
-    background-color: transparent; /* Delvis transparent */
+    display: flex; /* Alltid synlig, horisontell i skrivbordsvy */
+    flex-direction: row; /* Horisontell layout */
+    list-style-type: none; /* Ta bort punkter */
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
     z-index: 1;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-nav ul.active {
-    display: flex; /* Visas när hamburgermenyn klickas */
+    justify-content: center; /* Centrera menyobjekten */
+    width: 100%; /* Full bredd */
 }
 
 nav ul li {
-    margin: 1.2rem 0;
+    margin: 0 2rem; /* Ökat avstånd mellan länkar för att sträcka ut */
+    flex: 1; /* Fördela utrymmet jämnt */
+    text-align: center; /* Centrera text i varje länk */
 }
 
 nav ul li a {
@@ -113,7 +113,7 @@ nav ul li a {
     font-size: 3.5rem; /* Larger text */
     margin-bottom: 0.5rem;
     text-shadow: none; /* Ta bort rosa outline */
-    color: #5ee3ff; /* Light blue to match .btn and .menu-toggle */
+    color: #5ee3ff; /* Light blue to match .btn */
     font-family: 'Georgia', serif; /* Ändrad font för annan stil */
     font-weight: bold;
 }
@@ -142,7 +142,7 @@ nav ul li a {
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background-color: #5ee3ff; /* Ljusblå färg, samma som hamburgermenyn */
+    background-color: #5ee3ff; /* Ljusblå färg */
     color: #333333; /* Mörkgrå textfärg */
     text-decoration: none;
     border-radius: 5px;
@@ -300,86 +300,39 @@ nav ul li a {
     border-radius: 10px;
 }
 
-.about-page p {
-    font-size: 1.1rem;
-}
-
-/* ========== Kontakt-sida (contact.html) ========== */
-.contact-page {
-    padding: 4rem 2rem;
-    text-align: center;
-    background-color: #FFF0F5; /* Match updated body background */
-}
-
-.contact-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333333; /* Mörkgrå för rubriker */
-}
-
-.contact-page p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-.contact-page form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-page label {
-    font-size: 1rem;
+.about-page .about-text {
     text-align: left;
+    max-width: 600px;
+}
+
+.about-page .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: #333333;
 }
 
-.contact-page input,
-.contact-page textarea {
-    padding: 0.5rem;
-    border: 1px solid #4A6FA5;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-page textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.contact-page button {
-    align-self: center;
+.about-page .about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 /* ========== Tjänster-sida (services.html) ========== */
 .services-page {
     padding: 4rem 2rem;
     text-align: center;
-    background-color: #FFF0F5; /* Match updated body background */
+    background-color: #FFF0F5; /* Match body background */
 }
 
 .services-page h1 {
-    font-size: 2.8rem; /* Ökad storlek för mer impact */
-    margin-bottom: 1.5rem;
-    color: #333333; /* Mörkgrå för rubriker */
-    font-weight: bold; /* Starkare typsnitt för proffsighet */
-}
-
-.services-page > p {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: #555555; /* Mjukare grå för text */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333333;
 }
 
 .services-page .service-grid {
     display: flex;
-    flex-direction: column; /* Staplad layout istället för grid */
-    gap: 4rem; /* Ökat gap för luftigare känsla mellan sektioner */
+    flex-direction: column;
+    gap: 4rem; /* Ökat avstånd för bättre känsla mellan sektioner */
     max-width: 1000px; /* Begränsad bredd för centrering */
     margin: 0 auto;
 }
@@ -479,55 +432,69 @@ footer p {
 
 /* ========== Responsiv design (mobil och mindre skärmar) ========== */
 @media (max-width: 768px) {
-    /* Header: Hamburgermeny */
+    /* Header: Navbar */
     header {
         min-height: auto;
-        padding: 0.5rem 1rem;
+        padding: 4rem 1rem 0 1rem; /* Lägg till padding-top för att kompensera för fixed header-top */
     }
 
     .header-top {
         flex-direction: row;
         align-items: center;
-    }
-
-    .logo {
-        flex: 1;
-        text-align: center;
+        justify-content: flex-end; /* Placera menu-toggle till höger */
+        background-color: #000000a8; /* Mörkgrå, halvtransparent bakgrund */
+        padding: 0.5rem 0;
+        position: fixed; /* Fäster navbaren högst upp */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Full bredd inklusive scrollbars */
+        min-height: 4rem; /* Ökad höjd för att täcka hamburgermeny-ikonen */
+        z-index: 2;
     }
 
     .menu-toggle {
-        right: 1rem;
+        display: block; /* Visa hamburgermeny i mobilvy */
+        top: 0rem; /* Flyttad upp pytte lite */
+        transform: none; /* Ta bort transform för att undvika klippning */
+    }
+
+    .header-logo {
+        max-width: 300px; /* Minska loggans storlek på mobil */
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        width: 100%; /* Full bredd */
     }
 
     nav ul {
-        display: none; /* Dold som standard */
-        position: absolute; /* Position relativt till nav */
-        top: calc(3rem + 1rem); /* Placera under hamburgermenyn (3rem font-size + 1rem padding) */
-        left: 0; /* Vänsterjusterad */
-        width: 100%; /* Full bredd */
-        background-color: transparent; /* Transparent bakgrund */
-        list-style-type: none; /* Remove bullet points */
-        z-index: 3000; /* Högt z-index för att säkerställa synlighet */
+        display: none; /* Dold som standard i mobilvy */
+        flex-direction: column; /* Stapla vertikalt */
+        width: 100vw; /* Full bredd inklusive scrollbars */
         text-align: center;
-        margin-top: 0; /* Ta bort marginal */
-        /* Alternativ: li::marker { color: transparent; } */ /* Gör punkterna osynliga, aktivera vid behov */
+        background-color: #000000a8; /* Mörkgrå, halvtransparent bakgrund */
+        position: absolute;
+        top: 2.03rem; /* Placera under header-top (min-height: 4rem) */
+        left: 0;
+        padding: 1rem 0;
+        z-index: 3; /* Över header-content */
     }
 
     nav ul.active {
-        display: flex; /* Visas när hamburgermenyn klickas */
-        position: absolute; /* Position relativt till nav */
-        top: calc(3rem + 1rem); /* Placera under hamburgermenyn */
-        left: -5rem; /* Vänsterjusterad */
-        width: 100%; /* Full bredd */
-        background-color: transparent; /* Transparent bakgrund */
-        padding: 1rem; /* Lägg till padding för bättre synlighet */
-        z-index: 3000; /* Högt z-index för att säkerställa synlighet */
+        display: flex; /* Visa när active-klassen läggs till */
+    }
+
+    nav ul li {
+        margin: 1rem 0; /* Större avstånd för bättre klickbarhet */
+        flex: none; /* Ta bort flex för vertikal layout */
     }
 
     nav ul li a {
-        color: #FFF0F5; /* Ljusrosa text */
-        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Svart konturlinje runt texten */
-        /* Alternativ: color: #333333; */ /* Mörkgrå text för bättre kontrast, aktivera vid behov */
+        color: #5ee3ff; /* Ljusblå text */
+        font-size: 1.2rem; /* Större text för mobil */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        padding: 0.5rem 1rem; /* Större klickområde */
+        display: block; /* Gör hela raden klickbar */
     }
 
     .header-content {
@@ -617,16 +584,21 @@ footer p {
 
 /* ========== Responsiv design för mindre skärmar (t.ex. iPhone 13 Pro, ≤450px) ========== */
 @media (max-width: 450px) {
-    .logo img {
-        max-height: 150px; /* Minska loggans storlek för mindre skärmar */
+    .header-logo {
+        max-width: 200px; /* Ytterligare minskning för små skärmar */
     }
 
     .menu-toggle {
-        font-size: 2rem; /* Minska hamburgermenyns storlek */
-        right: 0.5rem; /* Mindre marginal för att rymmas */
+        font-size: 1.5rem; /* Minska ikonstorlek för små skärmar */
+        top: 0.4rem; /* Flyttad upp pytte lite */
     }
 
-    nav ul, nav ul.active {
-        top: calc(2rem + 1rem); /* Anpassa för mindre hamburgermeny */
+    nav ul {
+        top: 3.8rem; /* Justera för mindre header-top höjd */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Minska textstorlek på små skärmar */
+        padding: 0.4rem 0.8rem;
     }
 }
